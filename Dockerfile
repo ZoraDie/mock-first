@@ -5,8 +5,10 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY app.py .
+COPY app/app.py .
 
-EXPOSE 5000
+COPY app/generate_token.py .
+
+EXPOSE 8000
 
 CMD ["python", "app.py"]
